@@ -23,4 +23,5 @@ sudo sed -i 's/sudo fallocate --length 34GiB /swap/swapfile/sudo fallocate --len
 | 32GB   | 38GB   |
 | 64GB   | 72GB   |
 | 128GB  | 139GB  |
+
 [Source](https://itsfoss.com/swap-size/)
