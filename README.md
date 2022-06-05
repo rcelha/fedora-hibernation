@@ -1,4 +1,3 @@
-# fedora-hibernation
 Btrfs hibernation script 
 
 
@@ -6,7 +5,7 @@ Btrfs hibernation script
 ```bash
 sudo sed -i 's/sudo fallocate --length 96GiB /swap/swapfile/sudo fallocate --length YOUR_SWAP_FILE_GiB /swap/swapfile/g' ~/.gc/fedora-hibernation/hibernation.sh
 ```
-# Redhat swap size recommendations
+#### Redhat swap size recommendations
 
 | RAM | Swap size (With Hibernation) |
 | ------------- | ------------- |
