@@ -1,3 +1,6 @@
+# Check swapfile
+sudo swapon
+
 # Create subvolume for swap
 sudo btrfs subvolume create /swap
 
@@ -17,6 +20,7 @@ sudo dracut -f
 swap_uuid=$(sudo findmnt -no UUID -T /swap/swapfile)
 
 # Get offset
+mkdir -p ~/.gc
 cd ~/.gc
 mkdir swap
 cd swap
@@ -24,7 +28,6 @@ wget -q 'https://raw.githubusercontent.com/osandov/osandov-linux/61679ecd914d653
 sudo gcc -O2 -o btrfs_map_physical btrfs_map_physical.c
 swap_offset=$(sudo ~/.gc/swap/btrfs_map_physical /swap/swapfile | sed -n '2p' | awk '{print $NF}')
 resume_offset=$(expr $swap_offset / 4096)
-
 
 # Update grub settings and grub
 sudo grubby --update-kernel=ALL --args=resume=UUID=$swap_uuid
@@ -73,3 +76,4 @@ cat <<-EOF | sudo tee /etc/systemd/system/systemd-hibernate.service.d/override.c
 [Service]
 Environment=SYSTEMD_BYPASS_HIBERNATION_MEMORY_CHECK=1
 EOF
+sudo reboot
