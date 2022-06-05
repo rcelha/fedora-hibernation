@@ -7,7 +7,7 @@ sudo btrfs subvolume create /swap
 # Create swapfile
 sudo touch /swap/swapfile
 sudo chattr +C /swap/swapfile  ## Needed to disable Copy On Write on the file.
-sudo fallocate --length 34GiB /swap/swapfile  ## Please, calculate your size
+sudo fallocate --length 96GiB /swap/swapfile  ## Please, calculate your size
 sudo chmod 600 /swap/swapfile 
 sudo mkswap /swap/swapfile 
 
