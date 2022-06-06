@@ -1,7 +1,7 @@
 Btrfs hibernation script 
 
 ```bash
-mkdir -p ~/.gc && cd ~/.gc && git clone --quiet https://github.com/pietryszak/fedora-hibernation.git && cd fedora-hibernation && chmod +x hibernation.sh && ./hibernation.sh 
+mkdir -p ~/.gc && cd ~/.gc && git clone --quiet https://github.com/pietryszak/fedora-hibernation.git && cd fedora-hibernation && chmod +x hibernation.sh after-restart.sh && ./hibernation.sh 
 ```
 
 ### Before run script adjust your swap size
@@ -18,3 +18,8 @@ sudo sed -i 's/sudo fallocate --length 96GiB /swap/swapfile/sudo fallocate --len
 | > 64 GB | Hibernation not recommended |
 
 [Source](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/html/managing_storage_devices/getting-started-with-swap_managing-storage-devices)
+
+## After automatic restart of PC after first script use second script (script restart PC once again)
+```bash 
+bash sh -c ~/.gc/fedora-hibernation/after-restart.sh
+```
