@@ -21,5 +21,5 @@ sudo sed -i 's/sudo fallocate --length 96GiB /swap/swapfile/sudo fallocate --len
 
 ## After automatic restart of PC after first script use second script (script restart PC once again)
 ```bash 
-bash sh -c ~/.gc/fedora-hibernation/after-restart.sh
+sh -c ~/.gc/fedora-hibernation/after-restart.sh
 ```
