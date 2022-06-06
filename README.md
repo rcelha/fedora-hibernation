@@ -1,5 +1,8 @@
 Btrfs hibernation script 
 
+```bash
+mkdir -p ~/.gc && cd ~/.gc && git clone --quiet https://github.com/pietryszak/fedora-hibernation.git && cd fedora-hibernation && chmod +x hibernation.sh && ./hibernation.sh 
+```
 
 ### Before run script adjust your swap size
 ```bash
