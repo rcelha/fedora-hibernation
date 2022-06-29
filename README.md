@@ -23,3 +23,5 @@ sudo sed -i 's/sudo fallocate --length 96GiB /swap/swapfile/sudo fallocate --len
 ```bash 
 sh -c ~/.gc/fedora-hibernation/after-restart.sh
 ```
+
+Based on @jorp solution and information on this [gist](https://gist.github.com/eloylp/b0d64d3c947dbfb23d13864e0c051c67) provided by @eloylp and comment by @miXwui.
