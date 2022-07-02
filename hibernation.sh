@@ -11,3 +11,4 @@ resume_offset=$(expr $swap_offset / 4096)
 ./configure-grub-offset.sh $swap_uuid $resume_offset
 ./install-services.sh
 ./install-sleep-conf.sh
+./install-login-conf.sh
